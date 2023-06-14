@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   root to: 'pages#home'
-  resources :quotes
+  resources :quotes do
+    resources :line_item_dates, except: [:index, :show]
+  end
 end
